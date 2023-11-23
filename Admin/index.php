@@ -1,8 +1,4 @@
 
-<?php
-include("db_connect.php");
-
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,59 +25,20 @@ include("db_connect.php");
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                            </li>
-                        </ul>
+                        
                     </li>
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                            
+              
+                          
                     </li>
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
+                        <span class="d-none d-sm-inline mx-1">user</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -98,7 +55,7 @@ include("db_connect.php");
         <div class="col py-3">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -107,23 +64,14 @@ include("db_connect.php");
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+       
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -134,7 +82,7 @@ include("db_connect.php");
 </nav>
 <div class="card">
   <div class="card-header">
-   <h4>View Details
+   <h4>View Messages
    <button type="button" class="btn btn-primary position-relative float-end" data-bs-toggle="collapse" data-bs-target="#collapsetable" aria-expanded="false" aria-controls="collapseExample">
   Inbox
   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="noti_number">
@@ -142,7 +90,7 @@ include("db_connect.php");
     <span class="visually-hidden">unread messages</span>
   </span>
 </button>
-   <a href="add.php" class="btn btn-primary float-centre">Add Details</a>
+   <a href="add.php" class="btn btn-primary float-centre">View Details</a>
 </h4>
   </div>
   <div class="card-body" style="margin: 50px;">
@@ -150,10 +98,10 @@ include("db_connect.php");
     <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th scope="col">StId</th>
-      <th scope="col">FullName</th>
-      <th scope="col">Age</th>
-      <th scope="col">Results</th>
+      <th scope="col">From<th>
+      <th scope="col">Title</th>
+      <th scope="col">Purpose</th>
+      <th scope="col">Description</th>
       <th scope="col">Action</th>
     
     </tr>
@@ -161,19 +109,19 @@ include("db_connect.php");
   <tbody>
    <?php
 
-   $sql = "SELECT *,r.grades FROM student_info s, results r where s.student_No = r.student_No AND s.status is NULL";
+   $sql = "SELECT * FROM messages where ";
    $result = mysqli_query($conn,$sql);
                     if($result){
                     while($row= mysqli_fetch_assoc($result)){
-                        $id=$row['id'];
-                        $st_id=$row['student_No'];
-                        $name=$row['fullName'];
-                        $Age=$row['age'];
-                        $Mark=$row['grades'];
+                        $id=$row['from'];
+                        $st_id=$row['message_title'];
+                        $name=$row['message_description'];
+                        $Age=$row['message purpose'];
+                        
                     
                        
                         echo'
-                    
+                        <td>'.$id.'</td>
                         <td>'.$st_id.'</td>
                         <td>'.$name.'</td>
                         <td>'.$Age.'</td>

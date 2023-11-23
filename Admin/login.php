@@ -1,3 +1,39 @@
+<?php
+session_start();
+include('db_connection.php');
+
+if(isset($_POST['submit']))
+{
+if($_POST['user_name'] != "" || $_POST['password'] != ""){
+
+$username =$_POST['user_name'];
+$password = $_POST['password'];
+
+$sql = "SELECT * FROM `users` WHERE `users`=? AND `password`=? ";
+			$query = $dbh->prepare($sql);
+			$query->execute(array($username,$password));
+			$row = $query->rowCount();
+			$fetch = $query->fetch();
+			if($row > 0) {
+			
+      
+				//Get Get all session value
+    foreach($fetch as $items => $v){
+      if(!is_numeric($items))
+      $_SESSION[$items] = $v;
+  }
+
+		header("Location: dashboard/dashboard.html");
+
+} else{
+$_SESSION['error']=' Invalid Student No or Password';
+}
+}else{
+$_SESSION['error']=' Must Fill-in All Fields';
+
+}
+}
+?>
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
     <html lang="en">
@@ -18,19 +54,19 @@
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
-                    <form action="#">
+                    <form action="#" method="POST">
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="text" placeholder="username" name="user_name" class="input">
                         </div>
                         <div class="field input-field">
-                            <input type="password" placeholder="Password" class="password">
+                            <input type="password" placeholder="Password" name="password" class="password">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
                         <div class="form-link">
                             <a href="#" class="forgot-pass">Forgot password?</a>
                         </div>
                         <div class="field button-field">
-                            <button>Login</button>
+                            <input type="submit" name="submit" value="Login">
                         </div>
                     </form>
                     <div class="form-link">
