@@ -1,5 +1,19 @@
-
-
+<?php
+$connection = mysql_connect("localhost", "root", "", "community_management"); 
+$db = mysql_select_db("colleges", $connection); 
+if(isset($_POST['submit'])){ 
+$name = $_POST['users'];
+$address = $_POST['password'];
+if($name !=''||$address !=''){
+$query = mysql_query("insert into students(users, password) values ('$name','$address')");
+echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+}
+else{
+echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+}
+}
+mysql_close($connection);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,35 +57,24 @@
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"></p>
 
                 <form class="mx-1 mx-md-4">
-                      <label class="form-label" for="form3Example1c">Your Name</label>
-                    </div>
-                  </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" />
-                      <label class="form-label" for="form3Example3c" align="center">Your Email</label>
+                     User Name: <input type="text" name="users" id="form3Example3c" class="form-control" placeholder="User Name" />
+                      
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4c" class="form-control" />
-                      <label class="form-label" for="form3Example4c" align="center">Password</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" />
-        
+                     Password <input type="password" id="form3Example4c" class="form-control" placeholder="Password" />
+                     
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Register</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
