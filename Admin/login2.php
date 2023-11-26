@@ -9,7 +9,7 @@ if($_POST['user_name'] != "" || $_POST['password'] != ""){
 $username =$_POST['user_name'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM `users` WHERE `users`=? AND `password`=? ";
+$sql = "SELECT * FROM `admins` WHERE `users`=? AND `password`=? ";
 			$query = $dbh->prepare($sql);
 			$query->execute(array($username,$password));
 			$row = $query->rowCount();
@@ -23,7 +23,7 @@ $sql = "SELECT * FROM `users` WHERE `users`=? AND `password`=? ";
       $_SESSION[$items] = $v;
   }
 
-		header("Location: dashboard/dashboard.html");
+		header("Location: dashboard/dashboard2.html");
 
 } else{
 $_SESSION['error']=' Invalid Student No or Password';
@@ -63,14 +63,14 @@ $_SESSION['error']=' Must Fill-in All Fields';
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
                         <div class="form-link">
-                            <a href="login2.php" class="forgot-pass">Login As Executive Member?</a>
+                            <a href="#" class="forgot-pass">Forget the Password?</a>
                         </div>
                         <div class="field button-field">
                             <input type="submit" name="submit" value="Login">
                         </div>
                     </form>
                     <div class="form-link">
-                        <span>Don't have an account?<a href="http://localhost/community_management/index.html" class="link signup-link">Go Back</a></span>
+                        <span>Don't have an account? <a href="http://localhost/community_management/index.html" class="link signup-link">Go Back</a></span>
                     </div>
                 </div>
            

@@ -1,3 +1,21 @@
+<?php
+include 'connect.php';
+if(isset($_POST['submit'])){
+
+$title = $_POST['message_title'];
+$from = $_POST['sent_from'];
+$purpose = $_POST['message_purpose'];
+$description = $_POST['message_descritption']; 
+
+$sql = "INSERT INTO messages(title,sent_from,message_purpose,message_description) VALUES ('$title','$from','$message_purpose','$message_descritption')";
+
+if ($conn->query($sql) === TRUE) {
+	echo "Mesage sent to the admins: ";
+} 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,11 +110,25 @@
                             </ul>
                         </div><!-- .foot-contact -->
 
-                        <div class="subscribe-form">
-                            <form class="d-flex flex-wrap align-items-center">
-                                <input type="email" placeholder="Your email">
-                                <input type="submit" value="send">
-                            </form><!-- .flex -->
+                        <div class="subscribe-form"><p>Message Us</p>
+        
+                            <div class="container">
+                                <form action="" method="POST">
+                              
+                                  <label for="fname">Full Name</label>
+                                  <input type="text" id="fname" name="sent_from" placeholder="Your name..">
+                                  <label for="country">Country</label>
+                                  <label for="title">Title</label>
+                                  <input type="text" id="title" name="Message_title" placeholder="Message title">
+                                  <label for="purpose">Purpose</label>
+                                  <input type="text" id="purpose" name="message_purpose" placeholder="Why are you sending this message" >
+                                  <label for="subject">Description</label>
+                                  <textarea id="description" name="message_descritption" placeholder="Write something.." style="height:200px"></textarea>
+                              
+                                  <input type="submit" value="Submit">
+                              
+                                </form>
+                              </div>
                         </div><!-- .search-widget -->
                     </div><!-- .col -->
                 </div><!-- .row -->
