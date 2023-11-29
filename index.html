@@ -42,18 +42,18 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="index.html" rel="home"><p>Namwianga ward</p></a>
+                          <b><a class="d-block" href="index.html" rel="home"><h3>Namwianga ward</h3></a></b>
                         </div><!-- .site-branding -->
 
                         <nav class="site-navigation d-flex justify-content-end align-items-center">
-                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                          <b><h3>  <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                 <li class="current-menu-item"><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="projects.html">Our Projects</a></li>
                                 <li><a href="news.html">News</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                                 <li><a href="Admin/login.php">Login</a></li>
-                            </ul>
+                            </ul></h3></b>
                         </nav>
 
                         <div class="hamburger-menu d-lg-none">
@@ -71,8 +71,9 @@
     <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-content-wrap">
+                <div class="image">
                 <img src="images/hero.jpg" alt="">
-
+            </div>
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
                         <div class="row h-100">
@@ -83,8 +84,9 @@
                                 </header>
 
                                 <div class="entry-content mt-4">
-                                    <h5><br> The best ward every tourist will love.<br>Every tourists must Visit!<br>
-									Namwianga ward is a Home of pure Cattle and the best raunch</h5>
+                                    <h5><br> Southern Province is one of Zambia's ten provinces, and home to Zambia's premier tourist attraction, Mosi-oa-Tunya (Victoria Falls), shared with Zimbabwe. The centre of the province, the Southern Plateau, has the largest area of commercial farmland of any Zambian province, and produces most of the maize crop.
+                                        Kalomo District is a district of Zambia, located in Southern Province. The capital lies at Kalomo. As of the 2000 Zambian census, the district had a population of 169,503 people
+                                        </h5>
                         <p><br> <br> </p>
                                 </div><!-- .entry-content -->
 
@@ -99,7 +101,9 @@
             </div>
 
             <div class="swiper-slide hero-content-wrap">
-                <img src="images/hero.jpg" alt="">
+                <div class="image">
+                    <img src="images/hero.jpg" alt="">
+                </div>
 
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
@@ -111,7 +115,9 @@
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
-                                     <h5><br> The best ward every tourist will love<br>Every tourists must<br> Visit!</h5>
+                                     <h5><br> Southern Province is one of Zambia's ten provinces, and home to Zambia's premier tourist attraction, Mosi-oa-Tunya (Victoria Falls), shared with Zimbabwe. The centre of the province, the Southern Plateau, has the largest area of commercial farmland of any Zambian province, and produces most of the maize crop.
+                                        Kalomo District is a district of Zambia, located in Southern Province. The capital lies at Kalomo. As of the 2000 Zambian census, the district had a population of 169,503 people
+                                        </h5>
                         <p><br> <br> </p>
                                 </div><!-- .entry-content -->
 
@@ -126,8 +132,9 @@
             </div><!-- .hero-content-wrap -->
 
             <div class="swiper-slide hero-content-wrap">
+                <div class="iamge">
                 <img src="images/hero.jpg" width="1920" height="832">
-
+            </div>
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
                         <div class="row h-100">
@@ -138,7 +145,9 @@
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
-                                     <h5><br> The best ward every tourist will love<br>Every tourists must<br> Visit!</h5>
+                                     <h5><br> Southern Province is one of Zambia's ten provinces, and home to Zambia's premier tourist attraction, Mosi-oa-Tunya (Victoria Falls), shared with Zimbabwe. The centre of the province, the Southern Plateau, has the largest area of commercial farmland of any Zambian province, and produces most of the maize crop.
+                                        Kalomo District is a district of Zambia, located in Southern Province. The capital lies at Kalomo. As of the 2000 Zambian census, the district had a population of 169,503 people
+                                        </h5>
                         <p><br> <br> </p>
                                 </div><!-- .entry-content -->
 
@@ -848,7 +857,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script type='text/javascript' src='js/circle-progress.min.js'></script>
     <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
     <script type='text/javascript' src='js/jquery.barfiller.js'></script>
-    <script type='text/javascript' src='js/custom.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>  
+
+    <script>
+       let index = 0;
+displayImages();
+function displayImages() {
+  let i;
+  const images = document.getElementsByClassName("images");
+  for (i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+  }
+  index++;
+  if (index > images.length) {
+    index = 1;
+  }
+  images[index-1].style.display = "block";
+  setTimeout(displayImages, 2000); 
+}
+        </script>
 
 </body>
 </html>
