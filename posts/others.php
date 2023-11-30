@@ -31,17 +31,19 @@
 
         <!-- Create a new Post button -->
         <div class="text-center">
-            <a href="create.php" class="btn btn-outline-dark">+ Create a new post</a>
+           <span> <a href="" class="btn btn-outline-dark">NEW POSTS</a></span>
         </div>
 
         <!-- Display posts from database -->
-        <div class="row">
+        <div class="row" align="center">
             <?php foreach($query as $q){ ?>
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
                     <div class="card text-white bg-dark mt-5" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $q['title'];?></h5>
-                            <p class="card-text"><?php echo substr($q['content'], 0, 50);?>...</p>
+                            <p class="card-text"><?php echo substr($q['content'], 0, 50);?> </p>
+                            <p class="card-text"><?php echo $q['images']; ?> </p>
+
                             <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
                         </div>
                     </div>

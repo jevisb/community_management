@@ -18,9 +18,10 @@
     // Create a new post
     if(isset($_REQUEST['new_post'])){
         $title = $_REQUEST['title'];
+        $images = $_REQUEST['images'];
         $content = $_REQUEST['content'];
 
-        $sql = "INSERT INTO blog_data(title, content) VALUES('$title', '$content')";
+        $sql = "INSERT INTO blog_data(title,images, content) VALUES('$title','$images', '$content')";
         mysqli_query($conn, $sql);
 
         echo $sql;
