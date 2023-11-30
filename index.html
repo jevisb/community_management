@@ -71,7 +71,7 @@
     <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-content-wrap">
-                <div class="image">
+                <div id="slide">
                 <img src="images/hero.jpg" alt="">
             </div>
                 <div class="hero-content-overlay position-absolute w-100 h-100">
@@ -101,7 +101,7 @@
             </div>
 
             <div class="swiper-slide hero-content-wrap">
-                <div class="image">
+                <div id="slide">
                     <img src="images/hero.jpg" alt="">
                 </div>
 
@@ -132,7 +132,7 @@
             </div><!-- .hero-content-wrap -->
 
             <div class="swiper-slide hero-content-wrap">
-                <div class="iamge">
+                <div id="slide">
                 <img src="images/hero.jpg" width="1920" height="832">
             </div>
                 <div class="hero-content-overlay position-absolute w-100 h-100">
@@ -859,22 +859,36 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script type='text/javascript' src='js/jquery.barfiller.js'></script>
     <script type='text/javascript' src='js/custom.js'></script>  
 
-    <script>
-       let index = 0;
-displayImages();
-function displayImages() {
-  let i;
-  const images = document.getElementsByClassName("images");
-  for (i = 0; i < images.length; i++) {
-    images[i].style.display = "none";
-  }
-  index++;
-  if (index > images.length) {
-    index = 1;
-  }
-  images[index-1].style.display = "block";
-  setTimeout(displayImages, 2000); 
+         <script type="text/javascript">
+            var i = 0; 			// Start Point
+var images = [];	// Images Array
+var time = 3000;	// Time Between Switch
+	 
+// Image List
+images[0] = "hero.pg";
+images[1] = "hero.png";
+images[2] = "hero.png";
+
+// Change Image
+function changeImg(){
+	document.slide.src = images[i];
+
+	// Check If Index Is Under Max
+	if(i < images.length - 1){
+	  // Add 1 to Index
+	  i++; 
+	} else { 
+		// Reset Back To O
+		i = 0;
+	}
+
+	// Run function every x seconds
+	setTimeout("changeImg()", time);
 }
+
+// Run function when page loads
+window.onload=changeImg;
+
         </script>
 
 </body>
