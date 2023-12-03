@@ -1,59 +1,37 @@
-<?php include 'header.php'; ?>
+<?php
 
-<div id="main-content">
-    <h2>Update Record</h2>
-    <?php
-    include 'config.php';
+    include "logic.php";
 
-    $stu_id = $_GET['id'];
+?>
 
-    $sql = "SELECT * FROM student WHERE sid = {$stu_id}";
-    $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    if(mysqli_num_rows($result) > 0)  {
-      while($row = mysqli_fetch_assoc($result)){
-    ?>
-    <form class="post-form" action="updatedata.php" method="post">
-      <div class="form-group">
-          <label>Name</label>
-          <input type="hidden" name="sid" value="<?php echo $row['sid']; ?>"/>
-          <input type="text" name="sname" value="<?php echo $row['sname']; ?>"/>
-      </div>
-      <div class="form-group">
-          <label>Address</label>
-          <input type="text" name="saddress" value="<?php echo $row['saddress']; ?>"/>
-      </div>
-      <div class="form-group">
-          <label>Class</label>
-          <?php
-            $sql1 = "SELECT * FROM studentclass";
-            $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful.");
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-            if(mysqli_num_rows($result1) > 0)  {
-              echo '<select name="sclass">';
-              while($row1 = mysqli_fetch_assoc($result1)){
-                if($row['sclass'] == $row1['cid']){
-                  $select = "selected";
-                }else{
-                  $select = "";
-                }
-                echo  "<option {$select} value='{$row1['cid']}'>{$row1['cname']}</option>";
-              }
-          echo "</select>";
-        }
-            ?>
-      </div>
-      <div class="form-group">
-          <label>Phone</label>
-          <input type="text" name="sphone" value="<?php echo $row['sphone']; ?>"/>
-      </div>
-      <input class="submit" type="submit" value="Update"/>
-    </form>
-    <?php
-      }
-    }
-    ?>
-</div>
-</div>
+    <title>news</title>
+</head>
+<body>
+
+   <div class="container mt-5">
+        <?php foreach($query as $q){ ?>
+            <form method="POST">
+                <input type="text" hidden value='<?php echo $q['id']?>' name="id">
+                <input type="text" placeholder="Blog Title" class="form-control my-3 bg-dark text-white text-center" name="title" value="<?php echo $q['title']?>">
+                <textarea name="content" class="form-control my-3 bg-dark text-white" cols="30" rows="10"><?php echo $q['content']?></textarea>
+                <button class="btn btn-dark" name="update">Update</button>
+            </form>
+        <?php } ?>    
+   </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </body>
 </html>

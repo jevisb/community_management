@@ -1,20 +1,21 @@
 <?php
-$connection = mysql_connect("localhost", "root", "", "community_management"); 
-$db = mysql_select_db("colleges", $connection); 
-if(isset($_POST['submit'])){ 
-$name = $_POST['users'];
-$address = $_POST['password'];
-if($name !=''||$address !=''){
-$query = mysql_query("insert into students(users, password) values ('$name','$address')");
-echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+ $conn = mysqli_connect("localhost", "root", "", "community_management");
+if(isset($_POST['submit']))
+{
+
+  $users = $_POST['users'];
+  $password = $_POST['password'];
+
+  $sql = "INSERT INTO `admins`(`users`, `password`) VALUES('$users','$password')";
+  mysqli_query($conn, $sql);
+  echo $sql;
+
+  header("Location: login.php");
+  exit();
 }
-else{
-echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
-}
-}
-mysql_close($connection);
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,7 +43,7 @@ mysql_close($connection);
                     <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                       <a href="register.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Register Users</span> </a> 
                       <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">View Messages</span> </a> 
-                      <a href="dashboard.html" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Make Posts</span> </a> 
+                      <a href="index.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Make Posts</span> </a> 
                       <a href="index.html" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Manage Website</span> </a> 
             
                 </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
@@ -62,14 +63,13 @@ mysql_close($connection);
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                      User Name: <input type="text" name="users" id="form3Example3c" class="form-control" placeholder="User Name" />
-                      
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                     Password <input type="password" id="form3Example4c" class="form-control" placeholder="Password" />
+                     Password <input type="password" id="form3Example4c" class="form-control" placeholder="Password" name="password" />
                      
                     </div>
                   </div>
@@ -80,7 +80,7 @@ mysql_close($connection);
                 </form>
         <!--Container Main end-->
   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
  <script src="script.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

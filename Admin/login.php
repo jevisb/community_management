@@ -62,11 +62,12 @@ $_SESSION['error']=' Must Fill-in All Fields';
                             <input type="password" placeholder="Password" name="password" class="password">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
-                        <div class="form-link">
-                            <a href="login2.php" class="forgot-pass">Login As Executive Member?</a>
-                        </div>
+                       
                         <div class="field button-field">
                             <input type="submit" name="submit" value="Login">
+                        </div>
+                        <div class="form-link">
+                            <a href="login2.php" class="forgot-pass">Login As Executive Member?</a>
                         </div>
                     </form>
                     <div class="form-link">
