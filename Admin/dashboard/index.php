@@ -40,7 +40,10 @@
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
                     <div class="card text-white bg-dark mt-5" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $q['title'];?></h5>
+                            <h5 class="card-title" style="width:30px, height: 40px"><?php echo $q['title'];?></h5>
+                            
+                            <h5 class="card-image"><?php echo $q['images'];?></h5>
+                            
                             <p class="card-text"><?php echo substr($q['content'], 0, 50);?>...</p>
                             <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
                         </div>
