@@ -33,7 +33,7 @@ try {
         echo "
         <script>
             alert('Registered Successfully');
-            window.location.href = 'http://localhost/community_management/Admin/dashboard/dashboard.html';
+            window.location.href = 'http://localhost/community_management/Admin/dashboard/dashboard.php';
         </script>
         ";
 
