@@ -8,19 +8,63 @@ include "Admin/dashboard/logic.php";
 
 <head>
     <title>Namwianga Ward</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- CSS stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-
     <link rel="stylesheet" href="css/elegant-fonts.css">
-
     <link rel="stylesheet" href="css/themify-icons.css">
-
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles -->
+    <style>
+        /* Adjustments for the header */
+        .site-header {
+            background-color: #007bff;
+            color: white;
+            padding-bottom: 15px;
+        }
+
+        .nav-bar {
+            background-color: #0056b3;
+        }
+
+        .nav-bar ul li a {
+            color: white;
+        }
+
+        .page-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        /* Card styles for posts */
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .card-title {
+            color: #007bff;
+        }
+
+        .card-text {
+            color: #343a40;
+        }
+
+        .btn-outline-orange {
+            border-color: #ff6600;
+            color: #ff6600;
+        }
+
+        .footer-bar {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -84,28 +128,27 @@ include "Admin/dashboard/logic.php";
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>News</h1>
+                    <h1>Posts</h1>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .page-header -->
     <div class="container mt-5">
-        <!-- Display posts from database -->
         <div class="row">
             <?php foreach ($query as $q) { ?>
-                <div class="col-12 col-lg-4 d-flex justify-content-center">
-                    <div class="card text-white bg-dark mt-5" style="width: 18rem;">
+                <div class="col-12 col-lg-4">
+                    <div class="card border-primary mb-4">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $q['title']; ?></h5>
+                            <h5 class="card-title text-primary"><?php echo $q['title']; ?></h5>
                             <p class="card-text"><?php echo substr($q['content'], 0, 50); ?>...</p>
-                            <a href="view-post.php?id=<?php echo $q['id'] ?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
+                            <a href="view-post.php?id=<?php echo $q['id'] ?>" class="btn btn-outline-primary">Read More <span class="text-primary">&rarr;</span></a>
                         </div>
                     </div>
                 </div>
             <?php } ?>
         </div>
-
     </div>
+
     <footer class="site-footer">
         <div class="footer-widgets">
             <div class="container">
