@@ -14,50 +14,47 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    
-    <div class="main">
-
-        <!-- Login Area -->
-        <div class="login" id="loginForm">
-            <h1 class="text-center">Login Form</h1>
-            <div class="login-form">
-                <form action="./endpoint/login.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                    </div>
-                    <p class="index.php" onclick="showRegistrationForm()">No Account?.</p>
-                    <button type="submit" class="btn btn-dark login-btn form-control">Login</button>
-                </form>
-            </div>
+<div class="main">
+    <!-- Login Area -->
+    <div class="login" id="loginForm">
+        <h1 class="text-center">Login Form</h1>
+        <div class="login-form">
+            <form action="./endpoint/login.php" method="POST">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <p class="index.php" onclick="showRegistrationForm()">No Account? Register here.</p>
+                <button type="submit" class="btn btn-dark login-btn form-control">Login</button>
+            </form>
         </div>
+    </div>
 
-
-        <!-- Registration Area -->
-        <div class="registration" id="registrationForm">
-            <h1 class="text-center">Registration Form</h1>
-            <div class="registration-form">
+    <!-- Registration Area -->
+    <div class="registration" id="registrationForm">
+        <h1 class="text-center">Registration Form</h1>
+        <div class="registration-form">
             <form action="./endpoint/add-user.php" method="POST">
                 <div class="form-group row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label for="firstName">First Name:</label>
                         <input type="text" class="form-control" id="firstName" name="first_name">
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label for="lastName">Last Name:</label>
                         <input type="text" class="form-control" id="lastName" name="last_name">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-5">
+                    <div class="col-md-5">
                         <label for="contactNumber">Contact Number:</label>
                         <input type="number" class="form-control" id="contactNumber" name="contact_number" maxlength="11">
                     </div>
-                    <div class="col-7">
+                    <div class="col-md-7">
                         <label for="email">Email:</label>
                         <input type="text" class="form-control" id="email" name="email">
                     </div>
@@ -70,15 +67,12 @@
                     <label for="registerPassword">Password:</label>
                     <input type="password" class="form-control" id="registerPassword" name="password">
                 </div>
-                <p class="registrationForm" onclick="showLoginForm()"><- Back</p>
+                <p class="registrationForm" onclick="showLoginForm()">Back to Login</p>
                 <button type="submit" class="btn btn-dark login-register form-control">Register</button>
             </form>
-
-            </div>
-
         </div>
-
     </div>
+</div>
 
     <script>
         // Constant variables

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "
             <script>
                 alert('Login Successfully!');
-                window.location.href = 'http://localhost/community_management/Admin/dashboard/dashboard.html';
+                window.location.href = 'http://localhost/community_management/Admin/dashboard/dashboard.php';
             </script>
             "; 
         } else {
