@@ -13,6 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Start a session
+session_start();
+
 // Process the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
@@ -23,7 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $sql = "INSERT INTO contactus (name, email, message) VALUES ('$name', '$email', '$message')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Message sent successfully";
+        // Store success message in session
+        $_SESSION['success_message'] = "Message sent successfully";
+
+        // Redirect to the index page
+        header("Location: index.html");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
